@@ -1,0 +1,9 @@
+.ui-slider-range.ui-widget-header {
+  background: #409CD1;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default {
+  border-radius: 9px;
+  border-color: #409CD1;
+  background: white;
+}

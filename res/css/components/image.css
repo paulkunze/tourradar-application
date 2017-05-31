@@ -1,0 +1,61 @@
+#section-image {
+  overflow: hidden;
+}
+
+#section-image > #main-pic {
+  margin-bottom: -5px;
+}
+
+#section-image > #discount-flag {
+  background: #E74C3C;
+  transform: rotate(45deg);
+  color: white;
+  position: absolute;
+  top: -14px;
+  right: -48px;
+  width: 120px;
+  padding-top: 24px;
+}
+
+#section-image > #heart {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 14px);
+}
+
+#section-image > #review-text {
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+  color: white;
+}
+
+#section-image > #review-star1, #section-image > #review-star1-empty {
+  position: absolute;
+  left: 3px;
+  bottom: 5px;
+}
+
+#section-image > #review-star2, #section-image > #review-star2-empty {
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+}
+
+#section-image > #review-star3, #section-image > #review-star3-empty {
+  position: absolute;
+  left: 37px;
+  bottom: 5px;
+}
+
+#section-image > #review-star4, #section-image > #review-star4-empty {
+  position: absolute;
+  left: 54px;
+  bottom: 5px;
+}
+
+#section-image > #review-star5, #section-image > #review-star5-empty {
+  position: absolute;
+  left: 71px;
+  bottom: 5px;
+}

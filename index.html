@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tourradar</title>
+  <!-- this atomic design approach might only make sense for bigger projects
+  and preprocessors that combine all components to one css file -->
+  <link rel="stylesheet" href="res/css/layout.css">
+  <link rel="stylesheet" href="res/css/components/button.css">
+  <link rel="stylesheet" href="res/css/components/divider.css">
+  <link rel="stylesheet" href="res/css/components/dropdown.css">
+  <link rel="stylesheet" href="res/css/components/image.css">
+  <link rel="stylesheet" href="res/css/components/input.css">
+  <link rel="stylesheet" href="res/css/components/slider.css">
+  <link rel="stylesheet" href="res/css/components/tile.css">
+  <link rel="stylesheet" href="res/css/utils/color.css">
+  <link rel="stylesheet" href="res/css/utils/display.css">
+  <link rel="stylesheet" href="res/css/utils/float.css">
+  <link rel="stylesheet" href="res/css/utils/font.css">
+  <link rel="stylesheet" href="res/css/utils/list.css">
+  <link rel="stylesheet" href="res/css/utils/margin.css">
+  <link rel="stylesheet" href="res/css/utils/padding.css">
+  <link rel="stylesheet" href="res/css/utils/position.css">
+  <link rel="stylesheet" href="res/css/utils/text-align.css">
+  <link rel="stylesheet" href="res/css/utils/width.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="font-default color-background">
+
+<div id="filters" class="margin-0-auto max-width-500">
+  <div class="tile-blue font-caption2 margin-bottom-10">
+  <span class="color-white">
+    Filter by:
+  </span>
+  </div>
+
+  <div class="tile-white margin-bottom-10">
+    <label for="departure" class="font-caption2">
+      Departure date
+    </label>
+    <ul class="list-no-dots">
+      <li>October 2016 <span>(1000)</span></li>
+      <li>November 2016 (1000)</li>
+      <li>December 2016 (1000)</li>
+      <li>January 2017 (1000)</li>
+      <li>February 2017 (1000)</li>
+    </ul>
+    <div>
+      <input id="departure" type="text" onfocus="(this.type='date')" class="input-default"
+             placeholder="Select a specific date">
+    </div>
+  </div>
+
+  <div class="tile-white margin-bottom-10">
+    <label for="duration-slider" class="font-caption2 display-block">
+      Duration
+    </label>
+    <div>
+      <div id="duration-min" class="font-caption3 display-inline-block">min</div>
+      <div id="duration-max" class="font-caption3 display-inline-block float-right">max</div>
+    </div>
+    <div id="duration-slider"></div>
+  </div>
+
+  <div class="dropdown margin-bottom-10 width-100p">
+    <button class="button-secondary-default" onclick="toggleDropdown()">
+      Sort by: <span id="sorting-caption">Price</span>
+    </button>
+    <div id="sortingDropdown" class="dropdown-content">
+      <span class="font-default"
+            onclick="applyPriceSorting(); toggleDropdown(); changeSortingCaption('Price');">
+        Price
+      </span>
+      <span class="font-default"
+            onclick="applyPrioritySorting(); toggleDropdown(); changeSortingCaption('Popularity');">
+        Popularity
+      </span>
+    </div>
+  </div>
+
+</div>
+
+<div id="items">
+  <div id="item" class="margin-bottom-30">
+    <div class="text-align-center">
+      <div id="section-image" class="max-width-500 position-relative margin-0-auto">
+        <img id="main-pic" class="width-100p max-width-500" src="res/img/background.jpg">
+        <div id="main-pic-1050" class="width-300 max-width-500"></div>
+        <span id="discount-flag" class="font-caption2">-88%</span>
+        <img id="heart" src="res/img/heart.svg">
+        <img id="review-star1" src="res/img/star.svg">
+        <img id="review-star1-empty" src="res/img/star-empty.svg">
+        <img id="review-star2" src="res/img/star.svg">
+        <img id="review-star2-empty" src="res/img/star-empty.svg">
+        <img id="review-star3" src="res/img/star.svg">
+        <img id="review-star3-empty" src="res/img/star-empty.svg">
+        <img id="review-star4" src="res/img/star.svg">
+        <img id="review-star4-empty" src="res/img/star-empty.svg">
+        <img id="review-star5" src="res/img/star.svg">
+        <img id="review-star5-empty" src="res/img/star-empty.svg">
+        <span id="review-text">140 reviews</span>
+      </div>
+    </div>
+
+    <div id="section-description" class="tile-white">
+      <span id="item-name" class="font-caption1">
+        Desert Evolution - 15 days
+      </span>
+      <span id="item-text" class="font-details-text display-block margin-top-10 margin-bottom-10">
+        “The tour is well organised and virtually hassle free. As it is a, here we have more text if need it to
+        compensate the… ”
+      </span>
+      <table class="width-100p">
+        <tr>
+          <td><label for="item-duration" class="font-caption3">DURATION</label></td>
+          <td><span id="item-duration">25 days</span></td>
+        </tr>
+        <tr>
+          <td><label for="item-destinations" class="font-caption3">DESTINATIONS</label></td>
+          <td><span id="item-destinations">12 cities</span></td>
+        </tr>
+        <tr>
+          <td><label for="item-start-end" class="font-caption3">STARTS / ENDS</label></td>
+          <td><span id="item-start-end">London / London</span></td>
+        </tr>
+        <tr>
+          <td><label for="item-operator" class="font-caption3">OPERATOR</label></td>
+          <td><span id="item-operator">Expat Explore Travel</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-divider" class="divider"></div>
+
+    <div id="section-price" class="tile-white">
+      <label for="item-price" class="font-caption2 display-block text-align-right margin-bottom-5">Total price</label>
+      <span id="item-price" class="font-price-display display-block text-align-right margin-bottom-20">$2,180</span>
+
+      <div class="divider margin-top-bottom-10"></div>
+
+      <div class="margin-side-10">
+        <span id="item-date1" class="display-inline-block width-50p">17 Oct</span>
+        <span id="item-availability1" class="display-inline-block">10 seats left</span>
+      </div>
+      <div class="margin-side-10">
+        <span id="item-date2" class="display-inline-block width-50p">21 Oct</span>
+        <span id="item-availability2" class="display-inline-block color-warning">3 seats left</span>
+      </div>
+
+      <div class="divider margin-top-bottom-10"></div>
+
+      <button id="item-more-button" class="button-primary-default padding-7">View more</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="res/json/tours.json"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="res/js/items.js"></script>
+<script src="res/js/slider.js"></script>
+<script src="res/js/dropdown.js"></script>
+</body>
+</html>

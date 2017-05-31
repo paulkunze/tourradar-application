@@ -1,0 +1,16 @@
+.input-default{
+  border: 1px solid #CCCCCC;
+  color: #CCCCCC;
+  height: 34px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.input-default:focus{
+  border: 1px solid #409CD1;
+  color: #409CD1;
+}

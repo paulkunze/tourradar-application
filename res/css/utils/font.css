@@ -1,0 +1,47 @@
+.font-default {
+  font-family: 'Helvetica', 'Arial', sans-serif; /* with fallback fonts */
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.font-details-text {
+  font-family: 'Helvetica-Oblique', 'Arial', sans-serif; /* with fallback fonts */;
+  font-size: 12px;
+  font-style: oblique;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.font-caption1 {
+  font-family: 'Helvetica-Bold', 'Arial Bold', sans-serif; /* with fallback fonts */
+  font-weight: bold;
+  font-size: 18px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.font-caption2 {
+  font-family: 'Helvetica-Bold', 'Arial Bold', sans-serif; /* with fallback fonts */
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 23px;
+}
+
+.font-caption3 {
+  font-family: 'Helvetica', 'Arial', sans-serif; /* with fallback fonts */
+  font-size: 10px;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.font-price-display {
+  font-family: 'Helvetica', 'Arial', sans-serif; /* with fallback fonts */
+  font-size: 18px;
+  color: #333333;
+  line-height: 23px;
+}
